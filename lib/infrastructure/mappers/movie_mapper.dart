@@ -16,11 +16,12 @@ class MovieMapper {
         overview: movieDb.overview,
         posterPath: (movieDb.posterPath != '')
             ? 'https://image.tmdb.org/t/p/w500${movieDb.posterPath}'
-            : 'no-poster',
+            : 'https://m.media-amazon.com/images/I/61s8vyZLSzL._AC_UF894,1000_QL80_.jpg',
         backdropPath: movieDb.backdropPath != ''
             ? 'https://image.tmdb.org/t/p/w500${movieDb.backdropPath}'
             : 'https://m.media-amazon.com/images/I/61s8vyZLSzL._AC_UF894,1000_QL80_.jpg',
-        releaseDate: movieDb.releaseDate,
+        releaseDate:
+            movieDb.releaseDate != null ? movieDb.releaseDate! : DateTime.now(),
         voteAverage: movieDb.voteAverage,
       );
 
@@ -37,7 +38,7 @@ class MovieMapper {
         overview: movieDetails.overview,
         posterPath: (movieDetails.posterPath != '')
             ? 'https://image.tmdb.org/t/p/w500${movieDetails.posterPath}'
-            : 'no-poster',
+            : 'https://m.media-amazon.com/images/I/61s8vyZLSzL._AC_UF894,1000_QL80_.jpg',
         backdropPath: movieDetails.backdropPath != ''
             ? 'https://image.tmdb.org/t/p/w500${movieDetails.backdropPath}'
             : 'https://m.media-amazon.com/images/I/61s8vyZLSzL._AC_UF894,1000_QL80_.jpg',
